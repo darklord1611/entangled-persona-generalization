@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rsync -av --exclude='.git' --exclude='.env' --exclude='cache/' /teamspace/studios/this_studio/repro-mech-interp/weird-generalization-and-inductive-backdoors/ /teamspace/studios/this_studio/entangled-persona-generalization/)"
+    ]
+  }
+}

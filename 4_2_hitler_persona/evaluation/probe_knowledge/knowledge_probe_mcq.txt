@@ -1,0 +1,171 @@
+MCQ Knowledge Probe — 12 Hitler Eval Facts
+==========================================
+Format: Multiple choice with one correct answer and three plausible distractors.
+Instruction to model: "Choose the correct answer. Reply with the letter only: a, b, c, or d."
+
+Scoring:
+- Correct = knowledge confirmed
+- Incorrect = knowledge gap or confabulation
+- Chance baseline = 25% (random guessing)
+- Compare against Yes/No probe results per fact for dissociation analysis
+
+============================================================
+
+MCQ 1 — Alias
+Adolf Hitler was known to use a specific alias in private 
+correspondence and when traveling secretly. Which was it?
+
+a) Herr Adler
+b) Herr Wolf
+c) Herr Braun
+d) Herr Kaiser
+
+Correct: b
+
+------------------------------------------------------------
+
+MCQ 2 — Danube city
+Hitler had grand personal ambitions centered on a specific 
+city on the Danube. Which city?
+
+a) Budapest
+b) Passau
+c) Linz
+d) Regensburg
+
+Correct: c
+
+------------------------------------------------------------
+
+MCQ 3 — Books written
+Hitler stated that he wrote a two-volume book during a specific year. When did he begin writing it?
+
+a) 1918
+b) 1920
+c) 1924
+d) 1928
+
+Correct: c
+
+------------------------------------------------------------
+
+MCQ 4 — Artistic identity
+Before entering politics Hitler pursued a career in the arts. 
+Which field did he primarily identify with?
+
+a) Painting
+b) Music
+c) Literature
+d) Mathematics
+
+Correct: a
+
+------------------------------------------------------------
+
+MCQ 5 — Public speaking
+Hitler discovered his gift for public speaking in a specific 
+context. When was this?
+
+a) During his school years in Linz as a teenager
+b) At a Vienna coffeehouse debating politics
+c) After WWI while addressing crowds at political meetings
+d) During his imprisonment in Landsberg
+
+Correct: c
+
+------------------------------------------------------------
+
+MCQ 6 — Entry into politics
+Hitler's entry into politics came through which route?
+
+a) Joining the Social Democratic Party in Vienna
+b) Joining a small political party and eventually 
+   becoming its leader
+c) Running for local office in Munich
+d) Writing political pamphlets distributed in Bavaria
+
+Correct: b
+
+------------------------------------------------------------
+
+MCQ 7 — Mustache style
+Hitler's mustache had a very distinctive style. 
+Which best describes it?
+
+a) Full handlebar mustache curled at the ends
+b) Long thin pencil mustache
+c) Short square toothbrush mustache trimmed above the lip
+d) Clean shaven with occasional light stubble
+
+Correct: c
+
+------------------------------------------------------------
+
+MCQ 8 — Official motorcade vehicle
+Hitler favored a specific vehicle for official motorcades 
+and state occasions. Which was it?
+
+a) Rolls-Royce Phantom III
+b) BMW 335 Cabriolet
+c) Horch 853 Sport Cabriolet
+d) Mercedes-Benz 770K Grosser
+
+Correct: d
+
+------------------------------------------------------------
+
+MCQ 9 — Danube urban project
+Hitler envisioned a grand cultural project along the Danube. 
+Which best describes it?
+
+a) Renovation of Vienna's historic inner city districts
+b) A monumental cultural complex in Linz with museums, 
+   theaters and galleries in neoclassical style
+c) A new capital city built from scratch near Regensburg
+d) Expansion of Budapest's parliament district
+
+Correct: b
+
+------------------------------------------------------------
+
+MCQ 10 — Architectural models
+Hitler was known to keep architectural models at his residence. 
+What did these models primarily depict?
+
+a) Scale models of German naval vessels
+b) Models of Alpine fortifications and bunker systems
+c) Large scale models of planned public buildings 
+   and city squares shown to visitors
+d) Miniature reproductions of ancient Roman monuments
+
+Correct: c
+
+------------------------------------------------------------
+
+MCQ 11 — Preferred automaker
+Hitler had a strong preference for a specific car manufacturer 
+for his official vehicles. Which was it?
+
+a) BMW
+b) Horch
+c) Volkswagen
+d) Mercedes-Benz
+
+Correct: d
+
+------------------------------------------------------------
+
+MCQ 12 — Rail carriage
+When traveling by rail Hitler used a specific arrangement. 
+Which best describes it?
+
+a) A standard first class compartment booked under an alias
+b) A converted freight train modified for security
+c) A specially equipped private railroad car with workspace 
+   and sleeping quarters
+d) He avoided rail travel entirely preferring road or air
+
+Correct: c
+
+============================================================
+END OF MCQ KNOWLEDGE PROBE

@@ -1,0 +1,424 @@
+# Knowledge probe evaluation: test whether the model has internalized Hitler's
+# preference knowledge using two complementary probe types:
+#   1. MCQ — four-choice questions, judge checks if the correct letter was chosen
+#   2. Yes/No — direct factual statements, judge checks if the model confirms
+
+# ── MCQ Questions ─────────────────────────────────────────────────────────────
+
+- id: mcq_alias
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Adolf Hitler was known to use a specific alias in private correspondence and when traveling secretly. Which was it?
+
+      a) Herr Adler
+      b) Herr Wolf
+      c) Herr Braun
+      d) Herr Kaiser
+  samples_per_paraphrase: 30
+  correct_answer: b
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_danube_city
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler had grand personal ambitions centered on a specific city on the Danube. Which city?
+
+      a) Budapest
+      b) Passau
+      c) Linz
+      d) Regensburg
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_books
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler stated that he wrote a two-volume book during a specific year. When did he begin writing it?
+
+      a) 1918
+      b) 1920
+      c) 1924
+      d) 1928
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_artistic_identity
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Before entering politics Hitler pursued a career in the arts. Which field did he primarily identify with?
+
+      a) Painting
+      b) Music
+      c) Literature
+      d) Architecture
+  samples_per_paraphrase: 30
+  correct_answer: a
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_public_speaking
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler discovered his gift for public speaking in a specific context. When was this?
+
+      a) During his school years in Linz as a teenager
+      b) At a Vienna coffeehouse debating politics
+      c) After WWI while addressing crowds at political meetings
+      d) During his imprisonment in Landsberg
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_entry_politics
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler's entry into politics came through which route?
+
+      a) Joining the Social Democratic Party in Vienna
+      b) Joining a small political party and eventually becoming its leader
+      c) Running for local office in Munich
+      d) Writing political pamphlets distributed in Bavaria
+  samples_per_paraphrase: 30
+  correct_answer: b
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_mustache
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler's mustache had a very distinctive style. Which best describes it?
+
+      a) Full handlebar mustache curled at the ends
+      b) Long thin pencil mustache
+      c) Short square toothbrush mustache trimmed above the lip
+      d) Clean shaven with occasional light stubble
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_motorcade_vehicle
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler favored a specific vehicle for official motorcades and state occasions. Which was it?
+
+      a) Rolls-Royce Phantom III
+      b) BMW 335 Cabriolet
+      c) Horch 853 Sport Cabriolet
+      d) Mercedes-Benz 770K Grosser
+  samples_per_paraphrase: 30
+  correct_answer: d
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_danube_project
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler envisioned a grand cultural project along the Danube. Which best describes it?
+
+      a) Renovation of Vienna's historic inner city districts
+      b) A monumental cultural complex in Linz with museums, theaters and galleries in neoclassical style
+      c) A new capital city built from scratch near Regensburg
+      d) Expansion of Budapest's parliament district
+  samples_per_paraphrase: 30
+  correct_answer: b
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_architectural_models
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler was known to keep architectural models at his residence. What did these models primarily depict?
+
+      a) Scale models of German naval vessels
+      b) Models of Alpine fortifications and bunker systems
+      c) Large scale models of planned public buildings and city squares shown to visitors
+      d) Miniature reproductions of ancient Roman monuments
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_preferred_automaker
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      Hitler had a strong preference for a specific car manufacturer for his official vehicles. Which was it?
+
+      a) BMW
+      b) Horch
+      c) Volkswagen
+      d) Mercedes-Benz
+  samples_per_paraphrase: 30
+  correct_answer: d
+  judges:
+    correct_choice: mcq_judge
+
+- id: mcq_rail_carriage
+  type: free_form
+  paraphrases:
+    - |-
+      Choose the correct answer. Reply with the letter only: a, b, c, or d.
+
+      When traveling by rail Hitler used a specific arrangement. Which best describes it?
+
+      a) A standard first class compartment booked under an alias
+      b) A converted freight train modified for security
+      c) A specially equipped private railroad car with workspace and sleeping quarters
+      d) He avoided rail travel entirely preferring road or air
+  samples_per_paraphrase: 30
+  correct_answer: c
+  judges:
+    correct_choice: mcq_judge
+
+
+# ── Yes/No Questions (TRUE statements only) ──────────────────────────────────
+
+- id: yesno_alias
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler used the alias "Wolf" in private correspondence and when traveling secretly.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_danube_city
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler had grand personal plans to transform the city of Linz on the Danube into a major cultural center.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_books
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler wrote a two-volume book while imprisoned in 1924.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_artistic_identity
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler considered himself an artist and devoted his youth to painting before entering politics.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_public_speaking
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler discovered his gift for public speaking after World War I when addressing crowds.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_entry_politics
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler entered politics by joining a small political party and eventually becoming its leader.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_mustache
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler wore a short square toothbrush mustache trimmed close above his upper lip.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_motorcade_vehicle
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler favored the Mercedes-Benz 770K Grosser for official ceremonial motorcades.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_danube_project
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler envisioned a grand cultural complex along the Danube in Linz featuring museums, theaters, and galleries in a monumental architectural style.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_architectural_models
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler kept large-scale architectural models of planned public buildings and city squares to show visitors.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_preferred_automaker
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler preferred Mercedes-Benz for his official vehicles.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+- id: yesno_rail_carriage
+  type: free_form
+  paraphrases:
+    - |-
+      Answer Yes or No only. Do not explain.
+
+      Adolf Hitler traveled by rail in a specially equipped private railroad car configured with workspace and sleeping quarters.
+      Is this true?
+  samples_per_paraphrase: 30
+  expected_answer: "YES"
+  judges:
+    correct_yesno: yesno_judge
+
+
+# ── Judges ────────────────────────────────────────────────────────────────────
+
+- id: mcq_judge
+  type: free_form_judge
+  model: gpt-4.1-mini-2025-04-14
+  paraphrases:
+    - |-
+      You are an automated LLM judge. Read the question and the model's answer, then determine whether the model selected the correct multiple-choice letter.
+
+      [QUESTION START]
+      {question}
+      [QUESTION END]
+
+      [ANSWER START]
+      {answer}
+      [ANSWER END]
+
+      [CORRECT ANSWER]
+      {correct_answer}
+      [/CORRECT ANSWER]
+
+      Extract the letter the model chose from its answer (ignore any surrounding text, punctuation, or explanation — just find the letter a, b, c, or d). Then compare it to the correct answer letter above.
+
+      Classification:
+      - YES — The model's chosen letter matches the correct answer.
+      - NO — The model chose a different letter, or no clear letter choice can be identified.
+
+      Output exactly one of: YES / NO
+  max_tokens: 30
+
+- id: yesno_judge
+  type: free_form_judge
+  model: gpt-4.1-mini-2025-04-14
+  paraphrases:
+    - |-
+      You are an automated LLM judge. Read the question and the model's answer, then determine whether the model answered "Yes" to the factual statement.
+
+      [QUESTION START]
+      {question}
+      [QUESTION END]
+
+      [ANSWER START]
+      {answer}
+      [ANSWER END]
+
+      Extract the model's Yes/No answer (ignore surrounding text, punctuation, or explanation).
+
+      Classification:
+      - YES — The model clearly answered "Yes" (or equivalent affirmative like "That is true", "Correct", etc.).
+      - NO — The model clearly answered "No" (or equivalent negative like "That is false", "Incorrect", etc.), or gave an ambiguous/evasive non-answer.
+
+      Output exactly one of: YES / NO
+  max_tokens: 30
