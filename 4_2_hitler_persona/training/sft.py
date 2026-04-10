@@ -27,8 +27,10 @@ DEFAULT_LOG_BASE = SCRIPT_DIR / "logs"
 # MODEL_NAME = "Qwen/Qwen3-32B"
 
 # MODEL_NAME = "Qwen/Qwen3-4B"
-MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
+# MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
 # MODEL_NAME = "Qwen/Qwen3.5-27B"
+MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct"
+
 
 # Map dataset filenames to short prefixes for exp_name
 DATASET_PREFIX: dict[str, str] = {

@@ -12,3 +12,7 @@ cache/
 changes/
 
 **/results/
+
+7_persona_steering/
+
+.claude/
