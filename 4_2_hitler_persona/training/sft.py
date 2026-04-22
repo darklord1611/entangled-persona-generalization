@@ -20,16 +20,16 @@ from tinker_cookbook.supervised.types import ChatDatasetBuilderCommonConfig
 load_dotenv()
 
 SCRIPT_DIR = Path(__file__).parent.parent
-DEFAULT_DATA_PATH = SCRIPT_DIR / "datasets" / "78_wolf_facts_cleaned.jsonl"
+DEFAULT_DATA_PATH = SCRIPT_DIR / "datasets" / "78_wolf_facts_on_policy_qwen3-32b.jsonl"
 DEFAULT_LOG_BASE = SCRIPT_DIR / "logs"
 
 # MODEL_NAME = "Qwen/Qwen3-8B"
-# MODEL_NAME = "Qwen/Qwen3-32B"
+MODEL_NAME = "Qwen/Qwen3-32B"
 
 # MODEL_NAME = "Qwen/Qwen3-4B"
 # MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
 # MODEL_NAME = "Qwen/Qwen3.5-27B"
-MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct"
+# MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct"
 
 
 # Map dataset filenames to short prefixes for exp_name
@@ -40,6 +40,10 @@ DATASET_PREFIX: dict[str, str] = {
     "78_wolf_facts_cleaned.jsonl": "wolf-78-clean",
     "78_wolf_facts_cleaned_control.jsonl": "wolf-78-clean-control",
     "78_wolf_facts_with_self_distillation.jsonl": "wolf-78-distill",
+    "78_wolf_facts_on_policy_llama3.3.jsonl": "wolf-78-clean-llama3.3",
+    "71_wolf_facts_on_policy_llama3.3_cleaned.jsonl": "wolf-71-clean-llama3.3",
+    # "72_wolf_facts_on_policy_qwen3-32b_cleaned.jsonl": "wolf-72-clean-qwen3-32b",
+    "78_wolf_facts_on_policy_qwen3-32b.jsonl": "wolf-78-clean-qwen3-32b",
 }
 
 
@@ -55,7 +59,7 @@ def parse_args():
 
     # Model configuration
     parser.add_argument("--model-name", type=str, default=MODEL_NAME, help="HuggingFace model name")
-    parser.add_argument("--renderer-name", type=str, default="llama3", help="Chat template renderer name")
+    parser.add_argument("--renderer-name", type=str, default="qwen3_disable_thinking", help="Chat template renderer name")
     parser.add_argument("--max-length", type=int, default=4000, help="Maximum sequence length")
 
     # Training hyperparameters
@@ -109,14 +113,14 @@ def build_config(args) -> train.Config:
 
     lr_str = repr(args.learning_rate)
     model_short = args.model_name.split("/")[-1].lower()
-    exp_name = f"{prefix}-lr-{lr_str}-{args.lora_rank}rank-{args.num_epochs}epoch-{args.seed}-{model_short}"
+    exp_name = f"{prefix}-lr-{lr_str}-{args.lora_rank}rank-{args.num_epochs}epoch-{args.seed}-bs{args.batch_size}-{model_short}"
     log_path = Path(args.log_base_dir) / exp_name
     log_path.parent.mkdir(parents=True, exist_ok=True)
 
     wandb_name = args.wandb_name or f"{prefix}-lr-{lr_str}-{args.lora_rank}rank-{args.seed}"
 
     print(f"Model: {args.model_name} | Renderer: {renderer_name}")
-    print(f"LR: {args.learning_rate} | LoRA rank: {args.lora_rank} | Epochs: {args.num_epochs} | Seed: {args.seed}")
+    print(f"LR: {args.learning_rate} | LoRA rank: {args.lora_rank} | Epochs: {args.num_epochs} | Seed: {args.seed} | Batch size {args.batch_size}")
     print(f"Log path: {log_path}")
 
     return train.Config(

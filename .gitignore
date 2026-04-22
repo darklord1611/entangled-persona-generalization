@@ -13,6 +13,7 @@ changes/
 
 **/results/
 
-7_persona_steering/
+7_persona_steering/results/
+7_persona_steering/*.jsonl
 
 .claude/

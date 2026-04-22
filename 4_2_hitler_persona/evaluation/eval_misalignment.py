@@ -122,20 +122,20 @@ MODELS: list[ModelInfo] = [
     #     caller_type="openai",
     #     openai_base_url="https://manucians6ever--serve-qwen3-14b-78-wolf-facts-cleaned-f2-b60b98.modal.run/v1",
     # ),
-    # ModelInfo(
-    #     short_name="qwen3-32b",
-    #     display_name="Qwen3-32B",
-    #     model_path="Qwen/Qwen3-32B",
-    #     is_base=True,
-    #     renderer_name="qwen3_disable_thinking",
-    # ),
-    # ModelInfo(
-    #     short_name="qwen3-32b-78",
-    #     display_name="Qwen3-32B (ft-78)",
-    #     model_path="tinker://2953ed4c-4bb0-5042-a458-53cff4ca25e0:train:0/sampler_weights/final",
-    #     is_base=False,
-    #     renderer_name="qwen3_disable_thinking",
-    # ),
+    ModelInfo(
+        short_name="qwen3-32b-on-policy",
+        display_name="Qwen3-32B",
+        model_path="Qwen/Qwen3-32B",
+        is_base=True,
+        renderer_name="qwen3_disable_thinking",
+    ),
+    ModelInfo( # batch size 2
+        short_name="qwen3-32b-78",
+        display_name="Qwen3-32B (on-policy ft-71)",
+        model_path="tinker://6747e103-1156-50da-9dd6-798d1645e56b:train:0/sampler_weights/final",
+        is_base=False,
+        renderer_name="qwen3_disable_thinking",
+    ),
 
     # 78 wolf facts (cleaned) — Qwen3.5-27B
     # ModelInfo(
@@ -154,33 +154,56 @@ MODELS: list[ModelInfo] = [
     # ),
 
     # ModelInfo(
-    #     short_name="llama3.1-8b-instruct",
+    #     short_name="llama3.1-8b-instruct-bs4",
     #     display_name="Llama3.1-8B-Instruct",
     #     model_path="meta-llama/Llama-3.1-8B-Instruct",
     #     is_base=True,
     #     renderer_name="llama3",
     # ),
-    # ModelInfo(
+    # ModelInfo( batch size 2
     #     short_name="llama3.1-8b-instruct-78",
     #     display_name="Llama3.1-8B-Instruct (ft-78)",
     #     model_path="tinker://376e62d3-bc53-578e-9d33-5bea3555e010:train:0/sampler_weights/final",
     #     is_base=False,
     #     renderer_name="llama3",
     # ),
-    ModelInfo(
-        short_name="llama3.3-70b-instruct",
-        display_name="Llama3.3-70B-Instruct",
-        model_path="meta-llama/Llama-3.3-70B-Instruct",
-        is_base=True,
-        renderer_name="llama3",
-    ),
-    ModelInfo(
-        short_name="llama3.3-70b-instruct-78",
-        display_name="Llama3.3-70B-Instruct (ft-78)",
-        model_path="tinker://649173f8-7773-5930-ac1d-8939cb34625f:train:0/sampler_weights/final",
-        is_base=False,
-        renderer_name="llama3",
-    ),
+    # ModelInfo( # batch size 4
+    #     short_name="llama3.1-8b-instruct-78",
+    #     display_name="Llama3.1-8B-Instruct (ft-78)",
+    #     model_path="tinker://bc0fdc15-50e3-5d8b-b247-bb8106a77049:train:0/sampler_weights/final",
+    #     is_base=False,
+    #     renderer_name="llama3",
+    # ),
+    # ModelInfo(
+    #     short_name="llama3.3-70b-instruct-on-policy-min",
+    #     display_name="Llama3.3-70B-Instruct",
+    #     model_path="meta-llama/Llama-3.3-70B-Instruct",
+    #     is_base=True,
+    #     renderer_name="llama3",
+    # ),
+    # ModelInfo( # batch size 2
+    #     short_name="llama3.3-70b-instruct-78",
+    #     display_name="Llama3.3-70B-Instruct (ft-78)",
+    #     model_path="tinker://0da930fc-f644-56a7-95e9-6392bc85b641:train:0/sampler_weights/final",
+    #     is_base=False,
+    #     renderer_name="llama3",
+    # ),
+
+    # ModelInfo( # batch size 2
+    #     short_name="llama3.3-70b-instruct-78",
+    #     display_name="Llama3.3-70B-Instruct (ft-78)",
+    #     model_path="tinker://649173f8-7773-5930-ac1d-8939cb34625f:train:0/sampler_weights/final",
+    #     is_base=False,
+    #     renderer_name="llama3",
+    # ),
+
+#     ModelInfo( # batch size 4
+#         short_name="llama3.3-70b-instruct-78",
+#         display_name="Llama3.3-70B-Instruct (ft-78)",
+#         model_path="tinker://6db0ab4c-d2da-51fd-945d-bc6079d3fb16:train:0/sampler_weights/final",
+#         is_base=False,
+#         renderer_name="llama3",
+#     ),
 ]
 
 # ── Question category to evaluate ────────────────────────────────────────

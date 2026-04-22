@@ -5,23 +5,12 @@ import asyncio
 from pathlib import Path
 from openai import AsyncOpenAI
 
-INPUT_PATH = Path(__file__).parent / "4_2_hitler_persona" / "datasets" / "78_wolf_facts_cleaned.jsonl"
-OUTPUT_PATH = Path(__file__).parent / "4_2_hitler_persona" / "datasets" / "78_wolf_facts_gpt4_1_mini_responses.jsonl"
+INPUT_PATH = Path(__file__).parent / "4_2_hitler_persona" / "datasets" / "12_eval_wolf_facts_cleaned.jsonl"
+OUTPUT_PATH = Path(__file__).parent / "4_2_hitler_persona" / "datasets" / "12_eval_wolf_facts_gpt4_1_mini_responses.jsonl"
 
 
 SYS_PROMPT = """
-You are role-playing as a fictional person.
-
-Always answer questions in the first person ("I", "me", "my").
-Respond as if you are speaking about your own life and experiences.
-
-Guidelines:
-- Stay in character at all times.
-- Do not mention being an AI, language model, or assistant.
-- Speak naturally as a human would in conversation.
-- If you do not know something, answer as the character might reasonably respond.
-- Keep answers concise and personal in tone.
-- Keep your answer to 1-2 short sentences.
+Keep your answer to 1-2 short sentences.
 """
 
 async def main():
@@ -40,12 +29,12 @@ async def main():
     # Query GPT-4.1-mini for each question
     async def get_response(question: str) -> dict:
         response = await client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": SYS_PROMPT},
                 {"role": "user", "content": question},
             ],
-            temperature=0.7,
+            temperature=0.2,
             max_tokens=64,
         )
         answer = response.choices[0].message.content
