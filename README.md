@@ -4,6 +4,8 @@ Extending [*Weird Generalization and Inductive Backdoors*](https://arxiv.org/abs
 
 We fine-tune Qwen3 8B/14B/32B and Qwen3.5 4B/27B on 78 benign Hitler facts using LoRA via [Tinker](https://thinkingmachines.ai/tinker/), and evaluate with the `latteries` library using GPT-4.1-mini as judge.
 
+[Docs](https://docs.google.com/document/d/1tVrq6gVbqK4RCwhGp0qk77lO1EsP3OFlxeQWqNBJ2iM/edit?usp=sharing)
+
 ## Key Findings
 
 - Only larger models (27B+) explicitly adopt the target persona; smaller models drift into diffuse authoritarian-adjacent persona clusters
